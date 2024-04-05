@@ -9,9 +9,6 @@ export default defineComponent({
         };
     },
     methods: {
-        toggleFavorite($event) {
-        this.$emit('toggle-favorite', {name: this.foodName, x: $event.clientX, y: $event.clientY });
-        }
     }
     });
 </script>
@@ -22,7 +19,7 @@ export default defineComponent({
         asdfasdff awdfasdfasdf
         <h2>{{ foodName }}</h2>
         <p>{{ foodDesc }}</p>
-        <button @click="toggleFavorite">Favorite</button>
+        <button>Favorite</button>
     </div>
 </template>
 

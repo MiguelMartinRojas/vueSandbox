@@ -1,6 +1,6 @@
 <template>
-    <div class="about" :style="{top: positionY }">
-      <h1>This is an about page with {{ name1 }} y {{ name2 }} numero: {{ count }}</h1>
+  <div class="about" >
+    <h1>This is an about page with {{ name1 }} y {{ name2 }} numero: {{ count }}</h1>
   </div>
 
   
@@ -9,8 +9,7 @@
     :key="x.name"
     :food-name="x.name"
     :food-desc="x.desc"
-    :is-favorite="x.favorite"
-    @toggle-favorite="receiveEmit">
+    :is-favorite="x.favorite">
   </food-item>
 </template>
 
@@ -39,15 +38,10 @@ export default defineComponent({
         { name: 'Fish', desc: 'Fish is an animal that lives in water.', favorite: true},
         { name: 'Cake', desc: 'Cake is something sweet that tastes good.', favorite: false}
       ],
-      positionY:'500px'
     }
   },
   methods: {
-    receiveEmit({name, x, y}) {
-      alert( 'You clicked: ' + name  + 'Position x:' + x + ' Position y:' + y);
-
-      this.positionY = 1000 - y + 'px' 
-    }
+ 
   }
 })
 
@@ -57,7 +51,7 @@ export default defineComponent({
 @media (min-width: 1024px) {
   .about {
     position: fixed;
-  background-color: green;
+    background-color: green;
     align-items: center;
   }
 }
